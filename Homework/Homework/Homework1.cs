@@ -59,5 +59,26 @@ namespace Homework
 
             Console.WriteLine($"Число №1/№2 - {num1}/{num2}");
         }
+        public static void СalculateMetrics()
+        {
+            Console.WriteLine("\t\tКАЛЬКУЛЯТОР ПЛОЩАДИ");
+
+            Console.Write("Введите длину стороны А (можно дробное): ");
+            double sideA = 0;
+            while (!double.TryParse(Console.ReadLine().Replace('.', ','), out sideA))
+            {
+                Console.Write("ОШИБКА! Введите число! ");
+            }
+            
+            Console.Write("Введите длину стороны Б (можно дробное): ");
+            double sideB = 0;
+            while (!double.TryParse(Console.ReadLine().Replace('.', ','), out sideB))
+            {
+                Console.Write("ОШИБКА! Введите число! ");
+            }
+
+            Console.WriteLine($"Площадь фигуры: {Math.Round(sideA * sideB, 5)}");
+            Console.WriteLine($"Периметр фигуры: {Math.Round(sideA * 2 + sideB * 2, 5)}");
+        }
     }
 }
