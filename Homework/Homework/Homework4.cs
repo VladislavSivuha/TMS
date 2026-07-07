@@ -8,6 +8,11 @@ namespace Homework
 {
     public static class Homework4
     {
+        public static void FormNTo1()
+        {
+            Console.WriteLine("Введите число: ");
 
+
+        }
     }
 }
