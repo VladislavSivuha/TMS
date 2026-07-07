@@ -59,7 +59,33 @@ namespace Homework
             Console.WriteLine("Вывод последовательности Фибоначчи");
             foreach (int i in fibonacciList) { Console.WriteLine(i); }
         }
+        public static void CreateArray()
+        {
+            int i = 0;
+            do
+            {
+                Console.Write("Введите i размерность массива (< 6): ");
+                i = StringToDouble(Console.ReadLine());
+            }while (i <= 0);
 
+            int j = 0;
+            do
+            {
+                Console.Write("Введите j размерность массива (< 6): ");
+                j = StringToDouble(Console.ReadLine());
+            }while(j <= 0);
+
+            int[,] ints = new int[i, j];
+            Random random = new Random();
+            for (int ii = 0; ii < i; ii++)
+            {
+                for (int jj = 0; jj < j; jj++)
+                {
+                    ints[i, j] = random.Next(-9, 9);
+                }
+            }
+
+        }
 
 
 
