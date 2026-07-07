@@ -33,5 +33,31 @@ namespace Homework
             Console.WriteLine($"Возраст: {age}");
             Console.WriteLine($"Рост: {height}");
         }
+        public static void SwapNumbers()
+        {
+            Console.WriteLine("\t\tОБМЕН ЧИСЕЛ");
+
+            Console.Write("Введите число №1: ");
+            int num1 = 0;
+            while (!int.TryParse(Console.ReadLine(), out num1))
+            {
+                Console.Write("ОШИБКА! Введите число! ");
+            }
+            
+            Console.Write("Введите число №2: ");
+            int num2 = 0;
+            while (!int.TryParse(Console.ReadLine(), out num2))
+            {
+                Console.Write("ОШИБКА! Введите число! ");
+            }
+
+            Console.WriteLine($"Число №1/№2 - {num1}/{num2}");
+
+            int numTmp = num1;
+            num1 = num2;
+            num2 = numTmp;
+
+            Console.WriteLine($"Число №1/№2 - {num1}/{num2}");
+        }
     }
 }
