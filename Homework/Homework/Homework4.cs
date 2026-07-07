@@ -203,7 +203,10 @@ namespace Homework
                 }
             }
         }
-
+        public static void CreateList()
+        { 
+            
+        }
 
 
         static int StringToDouble(string stringNumber)
