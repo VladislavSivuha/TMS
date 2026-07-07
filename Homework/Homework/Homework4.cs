@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -171,6 +172,28 @@ namespace Homework
                         break;
                     // Сколько раз использовалось число
                     case 4:
+                        Dictionary<int, int> countNumbers = new Dictionary<int, int>();
+
+                        for (int ii = 0; ii < i; ii++)
+                        {
+                            for (int jj = 0; jj < j; jj++)
+                            {
+                                if (!countNumbers.ContainsKey(ints[ii, jj]))
+                                {
+                                    countNumbers.Add(ints[ii, jj], 1);
+                                }
+                                else
+                                {
+                                    countNumbers[ints[ii, jj]]++;
+                                }
+                            }
+                        }
+
+                        foreach (var item in countNumbers.OrderBy(x => x.Key))
+                        {
+                            Console.WriteLine($"{item.Key} - {item.Value}");
+                        }
+
                         break;
                     case 5:
                         exitProgram = true;
