@@ -41,8 +41,23 @@ namespace Homework
                 Console.WriteLine(i);
         }
         public static void PrintFibonacci()
-        { 
-            
+        {
+            Console.Write("Введите сколько чисел из последовательности Фибоначчи вывести: ");
+            int count = StringToDouble(Console.ReadLine());
+
+            List<int> fibonacciList = new List<int>();
+            for (int i = 0; i < count; i++)
+            {
+                if (fibonacciList.Count == 0)
+                    fibonacciList.Add(0);
+                else if (fibonacciList.Count == 1)
+                    fibonacciList.Add(1);
+                else
+                    fibonacciList.Add(fibonacciList[fibonacciList.Count - 1] + fibonacciList[fibonacciList.Count - 2]);
+            }
+
+            Console.WriteLine("Вывод последовательности Фибоначчи");
+            foreach (int i in fibonacciList) { Console.WriteLine(i); }
         }
 
 
