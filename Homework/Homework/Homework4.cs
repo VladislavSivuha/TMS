@@ -32,7 +32,7 @@ namespace Homework
                 }
             }
         }
-        public static void Add7()
+        public static void PlusSeven()
         {
             Console.Write("Введите сколько раз прибавить 7: ");
             int count = StringToDouble(Console.ReadLine());
@@ -40,7 +40,10 @@ namespace Homework
             for (int i = 0; count >= 0; count--, i += 7)
                 Console.WriteLine(i);
         }
-
+        public static void PrintFibonacci()
+        { 
+            
+        }
 
 
 
