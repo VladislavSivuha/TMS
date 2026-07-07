@@ -32,6 +32,19 @@ namespace Homework
                 }
             }
         }
+        public static void Add7()
+        {
+            Console.Write("Введите сколько раз прибавить 7: ");
+            int count = StringToDouble(Console.ReadLine());
+
+            for (int i = 0; count >= 0; count--, i += 7)
+                Console.WriteLine(i);
+        }
+
+
+
+
+
         static int StringToDouble(string stringNumber)
         {
             int num = 0;
