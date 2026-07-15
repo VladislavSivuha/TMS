@@ -9,13 +9,22 @@ namespace Homework
 {
     public static class Homework4
     {
-        static Dictionary<int, string> menu = new Dictionary<int, string>()
+        static Dictionary<int, string> menuForArray = new Dictionary<int, string>()
         {
             {1, "Вывести матрицу" },
             {2, "Кол-во положительных/отрицательных значений" },
             {3, "Вывод четных/нечетных значений в строках" },
             {4, "Сколько раз использовалось число" },
             {5, "Завершение работы" }
+        };
+        static Dictionary<int, string> menuForList = new Dictionary<int, string>()
+        {
+            {1, "Вывести List" },
+            {2, "Добавить запись" },
+            {3, "Удалить запись" },
+            {4, "Заменить четные на х2, нечетные на х0" },
+            {5, "Создать HashSet и вывести" },
+            {6, "Завершение работы" }
         };
 
         public static void FormNTo1()
@@ -83,7 +92,7 @@ namespace Homework
             {
                 Console.Write("Введите j размерность массива (< 6): ");
                 j = StringToDouble(Console.ReadLine());
-            }while(!(j > 0 && i < 6));
+            } while (!(j > 0 && i < 6));
 
             int[,] ints = new int[i, j];
             Random random = new Random();
@@ -117,14 +126,14 @@ namespace Homework
                         int positiveCount = 0;
                         int negativeCount = 0;
                         int zeroCount = 0;
-                        
+
                         for (int ii = 0; ii < i; ii++)
                         {
                             for (int jj = 0; jj < j; jj++)
                             {
                                 if (ints[ii, jj] > 0)
                                     positiveCount++;
-                                else if(ints[ii, jj] < 0)
+                                else if (ints[ii, jj] < 0)
                                     negativeCount++;
                                 else zeroCount++;
                             }
@@ -204,8 +213,61 @@ namespace Homework
             }
         }
         public static void CreateList()
-        { 
-            
+        {
+            List<int> intList = new List<int>();
+            Random random = new Random();
+            for (int i = 0; i < 10; i++)
+                intList.Add(random.Next(-10, 10));
+
+            bool exitProgram = false;
+            while (!exitProgram)
+            {
+                int selectedMenu = CreateList_ShowMenu();
+                switch (selectedMenu)
+                {
+                    // Вывести List
+                    case 1:
+                        ShowList(intList);
+                        break;
+                    // Добавить запись
+                    case 2:
+                        AddToList(ref intList);
+                        break;
+                    // Удалить запись
+                    case 3:
+
+                        break;
+                    // Заменить четные на х2, нечетные на х0
+                    case 4:
+                        break;
+                    // Создать HashSet и вывести
+                    case 5:
+
+                        break;
+                    // Завершение работы
+                    case 6:
+                        exitProgram = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        public static void ShowList(List<int> intList)
+        {
+            Console.WriteLine("Вывод List:");
+            for (int i = 0; i < intList.Count; i++)
+            {
+                Console.WriteLine($"[{i}] - {intList[i]}");
+            }
+        }
+        public static void RemoveFromList(ref List<int> intList, int index)
+        {
+            intList.RemoveAt(index);
+        }
+        public static void AddToList(ref List<int> intList)
+        {
+            int newNumber;
         }
 
 
@@ -222,19 +284,38 @@ namespace Homework
         public static int CreateArray_ShowMenu()
         {
             Console.WriteLine();
-            Console.WriteLine("МЕНЮ");
-            foreach (var item in menu)
+            Console.WriteLine("МЕНЮ для Array");
+            foreach (var item in menuForArray)
             {
                 Console.WriteLine($"{item.Key} - {item.Value}");
             }
             Console.WriteLine();
-            
+
             int selectedMenu = 0;
             do
             {
                 Console.Write("Выберите пункт меню: ");
                 selectedMenu = StringToDouble(Console.ReadLine());
-            } while (!(selectedMenu > 0 && selectedMenu <= menu.Keys.Max()));
+            } while (!(selectedMenu > 0 && selectedMenu <= menuForArray.Keys.Max()));
+
+            return selectedMenu;
+        }
+        public static int CreateList_ShowMenu()
+        {
+            Console.WriteLine();
+            Console.WriteLine("МЕНЮ для List");
+            foreach (var item in menuForList)
+            {
+                Console.WriteLine($"{item.Key} - {item.Value}");
+            }
+            Console.WriteLine();
+
+            int selectedMenu = 0;
+            do
+            {
+                Console.Write("Выберите пункт меню: ");
+                selectedMenu = StringToDouble(Console.ReadLine());
+            } while (!(selectedMenu > 0 && selectedMenu <= menuForList.Keys.Max()));
 
             return selectedMenu;
         }

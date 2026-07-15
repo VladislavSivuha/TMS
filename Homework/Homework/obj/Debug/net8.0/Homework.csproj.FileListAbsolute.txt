@@ -1,0 +1,15 @@
+D:\GitHubRepo\TMS\Homework\Homework\bin\Debug\net8.0\Homework.exe
+D:\GitHubRepo\TMS\Homework\Homework\bin\Debug\net8.0\Homework.deps.json
+D:\GitHubRepo\TMS\Homework\Homework\bin\Debug\net8.0\Homework.runtimeconfig.json
+D:\GitHubRepo\TMS\Homework\Homework\bin\Debug\net8.0\Homework.dll
+D:\GitHubRepo\TMS\Homework\Homework\bin\Debug\net8.0\Homework.pdb
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\Homework.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\Homework.AssemblyInfoInputs.cache
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\Homework.AssemblyInfo.cs
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\Homework.csproj.CoreCompileInputs.cache
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\Homework.sourcelink.json
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\Homework.dll
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\refint\Homework.dll
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\Homework.pdb
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\Homework.genruntimeconfig.cache
+D:\GitHubRepo\TMS\Homework\Homework\obj\Debug\net8.0\ref\Homework.dll
