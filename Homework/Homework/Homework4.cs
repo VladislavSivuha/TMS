@@ -30,7 +30,7 @@ namespace Homework
         public static void FormNTo1()
         {
             Console.Write("Введите число не равное 1: ");
-            int num = StringToDouble(Console.ReadLine());
+            int num = StringToInt(Console.ReadLine());
 
             if (num == 1)
             {
@@ -54,7 +54,7 @@ namespace Homework
         public static void PlusSeven()
         {
             Console.Write("Введите сколько раз прибавить 7: ");
-            int count = StringToDouble(Console.ReadLine());
+            int count = StringToInt(Console.ReadLine());
 
             for (int i = 0; count >= 0; count--, i += 7)
                 Console.WriteLine(i);
@@ -62,7 +62,7 @@ namespace Homework
         public static void PrintFibonacci()
         {
             Console.Write("Введите сколько чисел из последовательности Фибоначчи вывести: ");
-            int count = StringToDouble(Console.ReadLine());
+            int count = StringToInt(Console.ReadLine());
 
             List<int> fibonacciList = new List<int>();
             for (int i = 0; i < count; i++)
@@ -84,14 +84,14 @@ namespace Homework
             do
             {
                 Console.Write("Введите i размерность массива (< 6): ");
-                i = StringToDouble(Console.ReadLine());
+                i = StringToInt(Console.ReadLine());
             } while (!(i > 0 && i < 6));
 
             int j = 0;
             do
             {
                 Console.Write("Введите j размерность массива (< 6): ");
-                j = StringToDouble(Console.ReadLine());
+                j = StringToInt(Console.ReadLine());
             } while (!(j > 0 && i < 6));
 
             int[,] ints = new int[i, j];
@@ -235,14 +235,15 @@ namespace Homework
                         break;
                     // Удалить запись
                     case 3:
-
+                        RemoveFromList(ref intList);
                         break;
                     // Заменить четные на х2, нечетные на х0
                     case 4:
+                        ChangeList(ref intList);
                         break;
                     // Создать HashSet и вывести
                     case 5:
-
+                        CreateHashSetFromList(intList);
                         break;
                     // Завершение работы
                     case 6:
@@ -261,17 +262,48 @@ namespace Homework
                 Console.WriteLine($"[{i}] - {intList[i]}");
             }
         }
-        public static void RemoveFromList(ref List<int> intList, int index)
+        public static void RemoveFromList(ref List<int> intList)
         {
-            intList.RemoveAt(index);
+            Console.Write($"Введите число [0-{intList.Count}]: ");
+            intList.RemoveAt(StringToInt(Console.ReadLine()));
         }
         public static void AddToList(ref List<int> intList)
         {
-            int newNumber;
+            Console.Write("Введите число: ");
+            intList.Add(StringToInt(Console.ReadLine()));
+        }
+        public static void ChangeList(ref List<int> intList)
+        {
+            List<int> newList = new List<int>();
+
+            foreach (var item in intList)
+            {
+                if (item % 2 == 0)
+                {
+                    newList.Add(item * 2);
+                }
+                else
+                {
+                    newList.Add(item * 0);
+                }
+            }
+
+            intList = newList;
+            ShowList(intList);
+        }
+        public static void CreateHashSetFromList(List<int> intList)
+        { 
+            HashSet<int> set = new HashSet<int>(intList);
+
+            Console.WriteLine("Вывод HashSet:");
+            foreach (var item in set)
+            {
+                Console.WriteLine(item);
+            }
         }
 
 
-        static int StringToDouble(string stringNumber)
+        static int StringToInt(string stringNumber)
         {
             int num = 0;
             while (!int.TryParse(stringNumber, out num))
@@ -281,6 +313,7 @@ namespace Homework
             }
             return num;
         }
+        
         public static int CreateArray_ShowMenu()
         {
             Console.WriteLine();
@@ -295,7 +328,7 @@ namespace Homework
             do
             {
                 Console.Write("Выберите пункт меню: ");
-                selectedMenu = StringToDouble(Console.ReadLine());
+                selectedMenu = StringToInt(Console.ReadLine());
             } while (!(selectedMenu > 0 && selectedMenu <= menuForArray.Keys.Max()));
 
             return selectedMenu;
@@ -314,7 +347,7 @@ namespace Homework
             do
             {
                 Console.Write("Выберите пункт меню: ");
-                selectedMenu = StringToDouble(Console.ReadLine());
+                selectedMenu = StringToInt(Console.ReadLine());
             } while (!(selectedMenu > 0 && selectedMenu <= menuForList.Keys.Max()));
 
             return selectedMenu;
