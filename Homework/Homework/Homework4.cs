@@ -264,7 +264,7 @@ namespace Homework
         }
         public static void RemoveFromList(ref List<int> intList)
         {
-            Console.Write($"Введите число [0-{intList.Count}]: ");
+            Console.Write($"Введите число [0-{intList.Count - 1}]: ");
             intList.RemoveAt(StringToInt(Console.ReadLine()));
         }
         public static void AddToList(ref List<int> intList)
