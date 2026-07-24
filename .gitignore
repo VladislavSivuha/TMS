@@ -4,3 +4,9 @@
 
 /Homework/.vs/Homework
 /Homework/Homework/obj
+/Homework/.vs/ProjectEvaluation
+/Homework/Homework/bin/Debug/net8.0
+/Homework/FinanceTracker.Infrastructure/obj
+/Homework/FinanceTracker.Domain/obj
+/Homework/FinanceTracker.CLI/obj
+/Homework/FinanceTracker.Application/obj
